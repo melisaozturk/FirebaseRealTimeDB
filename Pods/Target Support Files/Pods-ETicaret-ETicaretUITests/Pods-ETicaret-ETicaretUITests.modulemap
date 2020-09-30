@@ -1,0 +1,6 @@
+framework module Pods_ETicaret_ETicaretUITests {
+  umbrella header "Pods-ETicaret-ETicaretUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,6 @@
+framework module Pods_ETicaret {
+  umbrella header "Pods-ETicaret-umbrella.h"
+
+  export *
+  module * { export * }
+}

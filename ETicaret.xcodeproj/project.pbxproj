@@ -1,0 +1,787 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1E92592A2524FBDE002D06DD /* ProductsListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9259292524FBDE002D06DD /* ProductsListController.swift */; };
+		1E92592D2524FC17002D06DD /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E92592B2524FC17002D06DD /* ProductCell.swift */; };
+		1E92592E2524FC17002D06DD /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E92592C2524FC17002D06DD /* ProductCell.xib */; };
+		1E92593425250183002D06DD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1E92593325250183002D06DD /* GoogleService-Info.plist */; };
+		1EB061D72523CAB200A8B2FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB061D62523CAB200A8B2FE /* AppDelegate.swift */; };
+		1EB061D92523CAB200A8B2FE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB061D82523CAB200A8B2FE /* SceneDelegate.swift */; };
+		1EB061DE2523CAB200A8B2FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EB061DC2523CAB200A8B2FE /* Main.storyboard */; };
+		1EB061E02523CAB900A8B2FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EB061DF2523CAB900A8B2FE /* Assets.xcassets */; };
+		1EB061E32523CAB900A8B2FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EB061E12523CAB900A8B2FE /* LaunchScreen.storyboard */; };
+		1EB061EE2523CABA00A8B2FE /* ETicaretTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB061ED2523CABA00A8B2FE /* ETicaretTests.swift */; };
+		1EB061F92523CABA00A8B2FE /* ETicaretUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB061F82523CABA00A8B2FE /* ETicaretUITests.swift */; };
+		1EB062072523CE0A00A8B2FE /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB062062523CE0A00A8B2FE /* Model.swift */; };
+		1EB062092523CE1B00A8B2FE /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB062082523CE1B00A8B2FE /* ViewModel.swift */; };
+		49059E63940312DBC41C59E3 /* Pods_ETicaret.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08E1755F46BAE981808E5CD7 /* Pods_ETicaret.framework */; };
+		CEF31EFC16AC9FE3C950DC0B /* Pods_ETicaretTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C632619B1A47B8FEFDC88FFE /* Pods_ETicaretTests.framework */; };
+		E07998BC3D4DD5E2634D616C /* Pods_ETicaret_ETicaretUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD196C1E5967D3864C9A8C6E /* Pods_ETicaret_ETicaretUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1EB061EA2523CABA00A8B2FE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1EB061CB2523CAB100A8B2FE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1EB061D22523CAB100A8B2FE;
+			remoteInfo = ETicaret;
+		};
+		1EB061F52523CABA00A8B2FE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1EB061CB2523CAB100A8B2FE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1EB061D22523CAB100A8B2FE;
+			remoteInfo = ETicaret;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		08E1755F46BAE981808E5CD7 /* Pods_ETicaret.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ETicaret.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E9259292524FBDE002D06DD /* ProductsListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsListController.swift; sourceTree = "<group>"; };
+		1E92592B2524FC17002D06DD /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		1E92592C2524FC17002D06DD /* ProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCell.xib; sourceTree = "<group>"; };
+		1E92593325250183002D06DD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1EB061D32523CAB200A8B2FE /* ETicaret.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ETicaret.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1EB061D62523CAB200A8B2FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1EB061D82523CAB200A8B2FE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		1EB061DD2523CAB200A8B2FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1EB061DF2523CAB900A8B2FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1EB061E22523CAB900A8B2FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1EB061E42523CAB900A8B2FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1EB061E92523CABA00A8B2FE /* ETicaretTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ETicaretTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1EB061ED2523CABA00A8B2FE /* ETicaretTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETicaretTests.swift; sourceTree = "<group>"; };
+		1EB061EF2523CABA00A8B2FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1EB061F42523CABA00A8B2FE /* ETicaretUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ETicaretUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1EB061F82523CABA00A8B2FE /* ETicaretUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETicaretUITests.swift; sourceTree = "<group>"; };
+		1EB061FA2523CABA00A8B2FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1EB062062523CE0A00A8B2FE /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		1EB062082523CE1B00A8B2FE /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		6626036F1B2C5064905277A8 /* Pods-ETicaretTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ETicaretTests.debug.xcconfig"; path = "Target Support Files/Pods-ETicaretTests/Pods-ETicaretTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6B84DF3C5345C4A3C4CB825A /* Pods-ETicaret-ETicaretUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ETicaret-ETicaretUITests.debug.xcconfig"; path = "Target Support Files/Pods-ETicaret-ETicaretUITests/Pods-ETicaret-ETicaretUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A0B0126B6DEAF37518EFC1BD /* Pods-ETicaret.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ETicaret.debug.xcconfig"; path = "Target Support Files/Pods-ETicaret/Pods-ETicaret.debug.xcconfig"; sourceTree = "<group>"; };
+		A16F5D645B00D6B8C60DD066 /* Pods-ETicaret.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ETicaret.release.xcconfig"; path = "Target Support Files/Pods-ETicaret/Pods-ETicaret.release.xcconfig"; sourceTree = "<group>"; };
+		C632619B1A47B8FEFDC88FFE /* Pods_ETicaretTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ETicaretTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD802249032FAB7D720A87F4 /* Pods-ETicaretTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ETicaretTests.release.xcconfig"; path = "Target Support Files/Pods-ETicaretTests/Pods-ETicaretTests.release.xcconfig"; sourceTree = "<group>"; };
+		CE3B077F269BCB017DCE2148 /* Pods-ETicaret-ETicaretUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ETicaret-ETicaretUITests.release.xcconfig"; path = "Target Support Files/Pods-ETicaret-ETicaretUITests/Pods-ETicaret-ETicaretUITests.release.xcconfig"; sourceTree = "<group>"; };
+		DD196C1E5967D3864C9A8C6E /* Pods_ETicaret_ETicaretUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ETicaret_ETicaretUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1EB061D02523CAB100A8B2FE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49059E63940312DBC41C59E3 /* Pods_ETicaret.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1EB061E62523CABA00A8B2FE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEF31EFC16AC9FE3C950DC0B /* Pods_ETicaretTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1EB061F12523CABA00A8B2FE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E07998BC3D4DD5E2634D616C /* Pods_ETicaret_ETicaretUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1E92592F2524FCC2002D06DD /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				1E92592B2524FC17002D06DD /* ProductCell.swift */,
+				1E92592C2524FC17002D06DD /* ProductCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		1E9259312524FCDE002D06DD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1EB061D82523CAB200A8B2FE /* SceneDelegate.swift */,
+				1EB061D62523CAB200A8B2FE /* AppDelegate.swift */,
+				1EB061DF2523CAB900A8B2FE /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		1EB061CA2523CAB100A8B2FE = {
+			isa = PBXGroup;
+			children = (
+				1EB061D52523CAB200A8B2FE /* ETicaret */,
+				1EB061EC2523CABA00A8B2FE /* ETicaretTests */,
+				1EB061F72523CABA00A8B2FE /* ETicaretUITests */,
+				1EB061D42523CAB200A8B2FE /* Products */,
+				5C6188E6FF284CD2D2950D3F /* Pods */,
+				6E7415C4FD9CB4AC87BFA41D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		1EB061D42523CAB200A8B2FE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1EB061D32523CAB200A8B2FE /* ETicaret.app */,
+				1EB061E92523CABA00A8B2FE /* ETicaretTests.xctest */,
+				1EB061F42523CABA00A8B2FE /* ETicaretUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1EB061D52523CAB200A8B2FE /* ETicaret */ = {
+			isa = PBXGroup;
+			children = (
+				1E9259312524FCDE002D06DD /* Resources */,
+				1E92592F2524FCC2002D06DD /* Cell */,
+				1EB061DC2523CAB200A8B2FE /* Main.storyboard */,
+				1EB061E12523CAB900A8B2FE /* LaunchScreen.storyboard */,
+				1E9259292524FBDE002D06DD /* ProductsListController.swift */,
+				1EB062082523CE1B00A8B2FE /* ViewModel.swift */,
+				1EB062062523CE0A00A8B2FE /* Model.swift */,
+				1EB061E42523CAB900A8B2FE /* Info.plist */,
+				1E92593325250183002D06DD /* GoogleService-Info.plist */,
+			);
+			path = ETicaret;
+			sourceTree = "<group>";
+		};
+		1EB061EC2523CABA00A8B2FE /* ETicaretTests */ = {
+			isa = PBXGroup;
+			children = (
+				1EB061ED2523CABA00A8B2FE /* ETicaretTests.swift */,
+				1EB061EF2523CABA00A8B2FE /* Info.plist */,
+			);
+			path = ETicaretTests;
+			sourceTree = "<group>";
+		};
+		1EB061F72523CABA00A8B2FE /* ETicaretUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1EB061F82523CABA00A8B2FE /* ETicaretUITests.swift */,
+				1EB061FA2523CABA00A8B2FE /* Info.plist */,
+			);
+			path = ETicaretUITests;
+			sourceTree = "<group>";
+		};
+		5C6188E6FF284CD2D2950D3F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A0B0126B6DEAF37518EFC1BD /* Pods-ETicaret.debug.xcconfig */,
+				A16F5D645B00D6B8C60DD066 /* Pods-ETicaret.release.xcconfig */,
+				6B84DF3C5345C4A3C4CB825A /* Pods-ETicaret-ETicaretUITests.debug.xcconfig */,
+				CE3B077F269BCB017DCE2148 /* Pods-ETicaret-ETicaretUITests.release.xcconfig */,
+				6626036F1B2C5064905277A8 /* Pods-ETicaretTests.debug.xcconfig */,
+				CD802249032FAB7D720A87F4 /* Pods-ETicaretTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		6E7415C4FD9CB4AC87BFA41D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				08E1755F46BAE981808E5CD7 /* Pods_ETicaret.framework */,
+				DD196C1E5967D3864C9A8C6E /* Pods_ETicaret_ETicaretUITests.framework */,
+				C632619B1A47B8FEFDC88FFE /* Pods_ETicaretTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1EB061D22523CAB100A8B2FE /* ETicaret */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1EB061FD2523CABA00A8B2FE /* Build configuration list for PBXNativeTarget "ETicaret" */;
+			buildPhases = (
+				BD8F4AB68B90B4CFF245CE6D /* [CP] Check Pods Manifest.lock */,
+				1EB061CF2523CAB100A8B2FE /* Sources */,
+				1EB061D02523CAB100A8B2FE /* Frameworks */,
+				1EB061D12523CAB100A8B2FE /* Resources */,
+				02B5671E08CF87816E6E6175 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ETicaret;
+			productName = ETicaret;
+			productReference = 1EB061D32523CAB200A8B2FE /* ETicaret.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1EB061E82523CABA00A8B2FE /* ETicaretTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1EB062002523CABA00A8B2FE /* Build configuration list for PBXNativeTarget "ETicaretTests" */;
+			buildPhases = (
+				F492B2640F64619E4642F22D /* [CP] Check Pods Manifest.lock */,
+				1EB061E52523CABA00A8B2FE /* Sources */,
+				1EB061E62523CABA00A8B2FE /* Frameworks */,
+				1EB061E72523CABA00A8B2FE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1EB061EB2523CABA00A8B2FE /* PBXTargetDependency */,
+			);
+			name = ETicaretTests;
+			productName = ETicaretTests;
+			productReference = 1EB061E92523CABA00A8B2FE /* ETicaretTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1EB061F32523CABA00A8B2FE /* ETicaretUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1EB062032523CABA00A8B2FE /* Build configuration list for PBXNativeTarget "ETicaretUITests" */;
+			buildPhases = (
+				B31220C105AFA53A00C86F96 /* [CP] Check Pods Manifest.lock */,
+				1EB061F02523CABA00A8B2FE /* Sources */,
+				1EB061F12523CABA00A8B2FE /* Frameworks */,
+				1EB061F22523CABA00A8B2FE /* Resources */,
+				4B8F606A6D8FB1BB3C59A8C2 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1EB061F62523CABA00A8B2FE /* PBXTargetDependency */,
+			);
+			name = ETicaretUITests;
+			productName = ETicaretUITests;
+			productReference = 1EB061F42523CABA00A8B2FE /* ETicaretUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1EB061CB2523CAB100A8B2FE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = "melisa öztürk";
+				TargetAttributes = {
+					1EB061D22523CAB100A8B2FE = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					1EB061E82523CABA00A8B2FE = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 1EB061D22523CAB100A8B2FE;
+					};
+					1EB061F32523CABA00A8B2FE = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 1EB061D22523CAB100A8B2FE;
+					};
+				};
+			};
+			buildConfigurationList = 1EB061CE2523CAB100A8B2FE /* Build configuration list for PBXProject "ETicaret" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1EB061CA2523CAB100A8B2FE;
+			productRefGroup = 1EB061D42523CAB200A8B2FE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1EB061D22523CAB100A8B2FE /* ETicaret */,
+				1EB061E82523CABA00A8B2FE /* ETicaretTests */,
+				1EB061F32523CABA00A8B2FE /* ETicaretUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1EB061D12523CAB100A8B2FE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1EB061E32523CAB900A8B2FE /* LaunchScreen.storyboard in Resources */,
+				1E92592E2524FC17002D06DD /* ProductCell.xib in Resources */,
+				1E92593425250183002D06DD /* GoogleService-Info.plist in Resources */,
+				1EB061E02523CAB900A8B2FE /* Assets.xcassets in Resources */,
+				1EB061DE2523CAB200A8B2FE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1EB061E72523CABA00A8B2FE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1EB061F22523CABA00A8B2FE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		02B5671E08CF87816E6E6175 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ETicaret/Pods-ETicaret-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ETicaret/Pods-ETicaret-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ETicaret/Pods-ETicaret-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4B8F606A6D8FB1BB3C59A8C2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ETicaret-ETicaretUITests/Pods-ETicaret-ETicaretUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ETicaret-ETicaretUITests/Pods-ETicaret-ETicaretUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ETicaret-ETicaretUITests/Pods-ETicaret-ETicaretUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B31220C105AFA53A00C86F96 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ETicaret-ETicaretUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BD8F4AB68B90B4CFF245CE6D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ETicaret-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F492B2640F64619E4642F22D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ETicaretTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1EB061CF2523CAB100A8B2FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1EB062072523CE0A00A8B2FE /* Model.swift in Sources */,
+				1EB061D72523CAB200A8B2FE /* AppDelegate.swift in Sources */,
+				1EB062092523CE1B00A8B2FE /* ViewModel.swift in Sources */,
+				1E92592D2524FC17002D06DD /* ProductCell.swift in Sources */,
+				1EB061D92523CAB200A8B2FE /* SceneDelegate.swift in Sources */,
+				1E92592A2524FBDE002D06DD /* ProductsListController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1EB061E52523CABA00A8B2FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1EB061EE2523CABA00A8B2FE /* ETicaretTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1EB061F02523CABA00A8B2FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1EB061F92523CABA00A8B2FE /* ETicaretUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1EB061EB2523CABA00A8B2FE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1EB061D22523CAB100A8B2FE /* ETicaret */;
+			targetProxy = 1EB061EA2523CABA00A8B2FE /* PBXContainerItemProxy */;
+		};
+		1EB061F62523CABA00A8B2FE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1EB061D22523CAB100A8B2FE /* ETicaret */;
+			targetProxy = 1EB061F52523CABA00A8B2FE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1EB061DC2523CAB200A8B2FE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1EB061DD2523CAB200A8B2FE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1EB061E12523CAB900A8B2FE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1EB061E22523CAB900A8B2FE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1EB061FB2523CABA00A8B2FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1EB061FC2523CABA00A8B2FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1EB061FE2523CABA00A8B2FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A0B0126B6DEAF37518EFC1BD /* Pods-ETicaret.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = R85RBRZ4TB;
+				INFOPLIST_FILE = ETicaret/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.melisaozturk.ETicaret;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1EB061FF2523CABA00A8B2FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A16F5D645B00D6B8C60DD066 /* Pods-ETicaret.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = R85RBRZ4TB;
+				INFOPLIST_FILE = ETicaret/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.melisaozturk.ETicaret;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1EB062012523CABA00A8B2FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6626036F1B2C5064905277A8 /* Pods-ETicaretTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = R85RBRZ4TB;
+				INFOPLIST_FILE = ETicaretTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.melisaozturk.ETicaretTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ETicaret.app/ETicaret";
+			};
+			name = Debug;
+		};
+		1EB062022523CABA00A8B2FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD802249032FAB7D720A87F4 /* Pods-ETicaretTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = R85RBRZ4TB;
+				INFOPLIST_FILE = ETicaretTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.melisaozturk.ETicaretTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ETicaret.app/ETicaret";
+			};
+			name = Release;
+		};
+		1EB062042523CABA00A8B2FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B84DF3C5345C4A3C4CB825A /* Pods-ETicaret-ETicaretUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = R85RBRZ4TB;
+				INFOPLIST_FILE = ETicaretUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.melisaozturk.ETicaretUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ETicaret;
+			};
+			name = Debug;
+		};
+		1EB062052523CABA00A8B2FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE3B077F269BCB017DCE2148 /* Pods-ETicaret-ETicaretUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = R85RBRZ4TB;
+				INFOPLIST_FILE = ETicaretUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.melisaozturk.ETicaretUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ETicaret;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1EB061CE2523CAB100A8B2FE /* Build configuration list for PBXProject "ETicaret" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1EB061FB2523CABA00A8B2FE /* Debug */,
+				1EB061FC2523CABA00A8B2FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1EB061FD2523CABA00A8B2FE /* Build configuration list for PBXNativeTarget "ETicaret" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1EB061FE2523CABA00A8B2FE /* Debug */,
+				1EB061FF2523CABA00A8B2FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1EB062002523CABA00A8B2FE /* Build configuration list for PBXNativeTarget "ETicaretTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1EB062012523CABA00A8B2FE /* Debug */,
+				1EB062022523CABA00A8B2FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1EB062032523CABA00A8B2FE /* Build configuration list for PBXNativeTarget "ETicaretUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1EB062042523CABA00A8B2FE /* Debug */,
+				1EB062052523CABA00A8B2FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1EB061CB2523CAB100A8B2FE /* Project object */;
+}
