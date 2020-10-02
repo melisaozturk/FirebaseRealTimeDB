@@ -10,13 +10,13 @@ import Foundation
 import Firebase
 
 protocol ViewModelDelegate {
-    func updateTableData(product: Product)
+    func updateTableData(products: [Product])
 }
 
 class ViewModel: NSObject {
     
     private var ref: DatabaseReference!
-    var product = Product()
+    var products = [Product]()
     var viewModelDelegate: ViewModelDelegate?
     
     override init() {
@@ -24,8 +24,8 @@ class ViewModel: NSObject {
         self.ref = Database.database().reference()
         
         self.setProduct(id: 1, category: "Elektronik", title: "Bilgisayar", price: 10000.0, description: "abc")
-        self.setProduct(id: 2, category: "Elektronik", title: "Bilgisayar", price: 10000.0, description: "abc")
-        self.setProduct(id: 3, category: "Elektronik", title: "Bilgisayar", price: 10000.0, description: "abc")
+        self.setProduct(id: 2, category: "Beyaz Eşya", title: "Buz Dolabı", price: 10000.0, description: "abc")
+        self.setProduct(id: 3, category: "Elektronik", title: "Tv", price: 10000.0, description: "abc")
         self.setProduct(id: 4, category: "Elektronik", title: "Bilgisayar", price: 10000.0, description: "abc")
         self.setProduct(id: 5, category: "Elektronik", title: "Bilgisayar", price: 10000.0, description: "abc")
     }
@@ -39,16 +39,23 @@ class ViewModel: NSObject {
 //    Listeleme vb işlemler için veritabanından verileri alıyoruz.
     func getProduct() {
         ref.child("products").observeSingleEvent(of: .value, with: { (snapshot) in
-            let value = snapshot.value as? NSDictionary
-            let id = value?["id"] as? Int ?? 0
-            let title = value?["title"] as? String ?? ""
-            let category = value?["category"] as? String ?? ""
-            let price = value?["price"] as? Double ?? 0.0
-            let description = value?["description"] as? String ?? ""
+            let values = snapshot.value as? [String: AnyObject]
             
-            self.product = Product(id: id, title: title, category: category, price: price, description: description)
-            self.viewModelDelegate!.updateTableData(product: self.product)
+            for (_, value) in values!.enumerated() {
+                let id = value.value["id"] as? Int
+                let title = value.value["title"] as? String
+                let category = value.value["category"] as? String
+                let price = value.value["price"] as? Double
+                let description = value.value["description"] as? String
+                
+                self.products.append(Product(id: id, title: title, category: category, price: price, description: description))
+                
+            }
             
+            
+//            self.product = Product(id: id, title: title, category: category, price: price, description: description)
+            self.viewModelDelegate!.updateTableData(products: self.products)
+//
         }) { (error) in
             print(error.localizedDescription)
         }

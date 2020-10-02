@@ -23,11 +23,6 @@ class ProductsListController: UIViewController {
         self.viewModel.getProduct()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.tableView.reloadData()
-    }
-    
     private func registerTableView() {
         self.tableView.register(UINib(nibName: "ProductCell", bundle: nil), forCellReuseIdentifier: "ProductCell")
         self.tableView.delegate = self
@@ -53,8 +48,8 @@ extension ProductsListController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension ProductsListController: ViewModelDelegate {
-    func updateTableData(product: Product) {
-        self.products.append(product)
+    func updateTableData(products: [Product]) {
+        self.products = products
         self.tableView.reloadData()
     }
 }
