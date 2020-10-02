@@ -19,8 +19,12 @@ class ProductsListController: UIViewController {
         super.viewDidLoad()
         self.registerTableView()
         
+        self.viewModel.viewModelDelegate = self
         self.viewModel.getProduct()
-//        self.products.append(self.viewModel.product)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.tableView.reloadData()
     }
     
@@ -46,4 +50,11 @@ extension ProductsListController: UITableViewDelegate, UITableViewDataSource {
     }
     
     
+}
+
+extension ProductsListController: ViewModelDelegate {
+    func updateTableData(product: Product) {
+        self.products.append(product)
+        self.tableView.reloadData()
+    }
 }
