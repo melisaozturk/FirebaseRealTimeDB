@@ -8,13 +8,13 @@
 
 import UIKit
 
-class ProductsListController: UIViewController {
-
+class ProductsListController: UIViewController {    
+    
     @IBOutlet weak var tableView: UITableView!
     
     let viewModel = ViewModel()
-    var products = [Product]()
-
+    var products = [Product]()    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.registerTableView()
@@ -38,6 +38,10 @@ class ProductsListController: UIViewController {
             self.view.addSubview(vc.view)
             vc.didMove(toParent: self)
         }
+    }
+    @IBAction func actionSort(_ sender: Any) {
+        self.viewModel.sortData()
+        self.tableView.reloadData()
     }
 }
 
@@ -66,7 +70,7 @@ extension ProductsListController: ViewModelDelegate {
 
 extension ProductsListController: PopupDelegate {
     func saveData(viewController: UIViewController, product: Product) {
-        self.viewModel.setProduct(id: "", category: product.category, title: product.title, price: product.price, description: product.description)
+        self.viewModel.setProduct(id: "", category: product.category, title: product.title, price: product.price, description: product.description, date: product.date)
         Util.shared().removeFromView(viewController: viewController)
         self.products.append(product)
         self.tableView.reloadData()
