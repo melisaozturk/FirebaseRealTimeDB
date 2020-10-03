@@ -13,7 +13,6 @@ protocol ViewModelDelegate {
     func updateTableData(products: [Product])
 }
 //TODO: id ler yanlış yazılıyor düzenle
-//TODO: listeye veri eklerken eğer veri girilmemiş ise uyarı göster ekletme - (boş veri girdirtme)
 //TODO: Silme, düzenleme gibi fonksiyonları ekleyebilirsin
 //TODO: güne göre sıralıyor yıl yap
 

@@ -262,7 +262,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zzf-ve-St5">
-                                        <rect key="frame" x="10" y="264" width="93" height="21"/>
+                                        <rect key="frame" x="10" y="264" width="120" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="7J1-Gh-Ig9"/>
                                         </constraints>
@@ -270,8 +270,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vhd-8s-CjC">
-                                        <rect key="frame" x="113" y="264" width="291" height="200"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vhd-8s-CjC">
+                                        <rect key="frame" x="140" y="264" width="264" height="200"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="200" id="Ldg-on-cRU"/>
@@ -361,6 +361,7 @@
                                     <constraint firstItem="zzf-ve-St5" firstAttribute="top" secondItem="Nh3-KS-O7b" secondAttribute="bottom" constant="20" id="v0H-oD-5fN"/>
                                     <constraint firstItem="btM-GA-Bt9" firstAttribute="leading" secondItem="Ns8-hp-oOy" secondAttribute="leading" constant="10" id="wKO-Eg-cGX"/>
                                     <constraint firstItem="YZF-Xu-OcR" firstAttribute="top" secondItem="Nh3-KS-O7b" secondAttribute="top" id="y4V-vf-mYZ"/>
+                                    <constraint firstItem="vhd-8s-CjC" firstAttribute="leading" secondItem="YZF-Xu-OcR" secondAttribute="leading" id="ykt-G8-fDQ"/>
                                     <constraint firstItem="vhd-8s-CjC" firstAttribute="top" secondItem="zzf-ve-St5" secondAttribute="top" id="zpO-w1-qwy"/>
                                 </constraints>
                             </view>
