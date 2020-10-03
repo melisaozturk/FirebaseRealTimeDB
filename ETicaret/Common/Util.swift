@@ -26,7 +26,7 @@ class Util: UtilDelegate {
         return sharedInstance!
     }
     
-    
+    //    MARK: Loading
     func showLoading(viewController: UIViewController) {
         viewController.view.addSubview(self.loading)
         viewController.view.isUserInteractionEnabled = false
@@ -54,10 +54,18 @@ class Util: UtilDelegate {
             }
         }
     }
+    
+    //    MARK: Date
+    func getDate() -> String{
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd.MM.yyyy"
+        return formatter.string(from: date)
+    }
 }
 
 extension String {
-func toDouble() -> Double? {
-    return NumberFormatter().number(from: self)?.doubleValue
- }
+    func toDouble() -> Double? {
+        return NumberFormatter().number(from: self)?.doubleValue
+    }
 }

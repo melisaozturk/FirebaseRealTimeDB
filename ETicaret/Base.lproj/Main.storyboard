@@ -36,6 +36,9 @@
                                 <rect key="frame" x="20" y="7" width="38" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sırala"/>
+                                <connections>
+                                    <action selector="actionSort:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nMv-oS-RfZ"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="iLa-WU-DQk">

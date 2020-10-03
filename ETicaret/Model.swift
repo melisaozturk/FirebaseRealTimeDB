@@ -14,4 +14,5 @@ struct Product {
     var category: String!
     var price: Double!
     var description: String!
+    var date: String!
 }

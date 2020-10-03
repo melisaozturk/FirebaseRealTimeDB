@@ -39,6 +39,11 @@ class ProductsListController: UIViewController {
             vc.didMove(toParent: self)
         }
     }
+    
+    @IBAction func actionSort(_ sender: Any) {
+        Util.shared().showLoading(viewController: self)
+        self.viewModel.sortData()        
+    }
 }
 
 extension ProductsListController: UITableViewDelegate, UITableViewDataSource {
@@ -66,7 +71,7 @@ extension ProductsListController: ViewModelDelegate {
 
 extension ProductsListController: PopupDelegate {
     func saveData(viewController: UIViewController, product: Product) {
-        self.viewModel.setProduct(id: "", category: product.category, title: product.title, price: product.price, description: product.description)
+        self.viewModel.setProduct(id: "", category: product.category, title: product.title, price: product.price, description: product.description, date: Util.shared().getDate())
         Util.shared().removeFromView(viewController: viewController)
         self.products.append(product)
         self.tableView.reloadData()
