@@ -28,18 +28,18 @@ class ViewModel: NSObject {
         self.ref = Database.database().reference()
     }
     
-//    Veritabanını oluşturuyoruz.  Kullanıcının girdiği veriler de yine buradan ekleniyor
+    //    Veritabanını oluşturuyoruz.  Kullanıcının girdiği veriler de yine buradan ekleniyor
     func setProduct(id: String, category: String, title: String, price: Double, description: String, date: String) { // TODO: close ekle success ise uyarı gösterip ekranı kapatsın
-         ref.child("products").childByAutoId().setValue(["title" : title, "category": category, "price": price, "id": ref.childByAutoId().key!
+        ref.child("products").childByAutoId().setValue(["title" : title, "category": category, "price": price, "id": ref.childByAutoId().key!
             , "description": description, "date": date])
     }
     
-//    Listeleme vb işlemler için veritabanından verileri alıyoruz.
+    //    Listeleme vb işlemler için veritabanından verileri alıyoruz.
     func getProduct() {
         ref.child("products").observe(.value, with: { (snapshot) in
             self.products.removeAll()
             let values = snapshot.value as? [String: AnyObject]
-            if values == nil && self.sortedProduct.isEmpty {
+            if values == nil {
                 self.setProduct(id: snapshot.key, category: "Elektronik", title: "Bilgisayar-20.11.2018", price: 100.000, description: "abc", date: "20.11.2018")
                 self.setProduct(id: snapshot.key, category: "BeyazEşya", title: "BuzDolabı-21.11.2018", price: 100.000, description: "abc", date: "21.11.2018")
                 self.setProduct(id: snapshot.key, category: "Elektronik", title: "Tv-22.11.2018", price: 100.000, description: "abc", date: "22.11.2018")
@@ -48,7 +48,7 @@ class ViewModel: NSObject {
                 self.ref.child("products").observeSingleEvent(of: .value, with: { (snapshot) in
                     let values = snapshot.value as? [String: AnyObject]
                     self.createModel(values: values!)
-
+                    
                 }) { (error) in
                     print(error.localizedDescription)
                 }
@@ -70,10 +70,8 @@ class ViewModel: NSObject {
             let price = value!["price"] as? Double
             let description = value!["description"] as? String
             let date = value!["date"] as? String
-            
-                let sortedProduct = Product(id: id, title: title, category: category, price: price, description: description, date: date)
-                self.sortedProduct.append(sortedProduct)
                         
+            self.sortedProduct.append(Product(id: id, title: title, category: category, price: price, description: description, date: date))
             self.viewModelDelegate?.updateTableData(products: self.sortedProduct)
         })
     }
@@ -89,12 +87,11 @@ class ViewModel: NSObject {
             let date = value.value["date"] as? String
             
             self.products.append(Product(id: id, title: title, category: category, price: price, description: description, date: date))
-            
+            self.viewModelDelegate!.updateTableData(products: self.products)
         }
-        self.viewModelDelegate!.updateTableData(products: self.products)
     }
     
     func deleteData() {
-//        ref.child("products")
+        //        ref.child("products")
     }
 }
