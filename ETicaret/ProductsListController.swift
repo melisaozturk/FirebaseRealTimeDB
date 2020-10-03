@@ -65,8 +65,8 @@ extension ProductsListController: ViewModelDelegate {
 }
 
 extension ProductsListController: PopupDelegate {
-    func saveData(viewController: UIViewController) {
-        //        TODO: save new data
+    func saveData(viewController: UIViewController, product: Product) {
+        self.viewModel.setProduct(id: product.id, category: product.category, title: product.title, price: product.price, description: product.description)
         UIUtil.shared().removeFromView(viewController: viewController)
     }
 }

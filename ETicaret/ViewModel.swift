@@ -25,9 +25,8 @@ class ViewModel: NSObject {
     }
     
 //    Veritabanını oluşturuyoruz.  Kullanıcının girdiği veriler de yine buradan ekleniyor
-    func setProduct(id: Int, category: String, title: String, price: Double, description: String) {
+    func setProduct(id: Int, category: String, title: String, price: Double, description: String) { // TODO: close ekle success ise uyarı gösterip ekranı kapatsın
         ref.child("products").childByAutoId().setValue(["title" : title, "category": category, "price": price, "id": id, "description": description])
-
     }
     
 //    Listeleme vb işlemler için veritabanından verileri alıyoruz.
