@@ -15,7 +15,7 @@ protocol ViewModelDelegate {
 //TODO: id ler yanlış yazılıyor düzenle
 //TODO: Silme, düzenleme gibi fonksiyonları ekleyebilirsin
 //TODO: güne göre sıralıyor yıl yap
-
+//TODO: popup ta keyboard done butonu yap
 class ViewModel: NSObject {
     
     private var ref: DatabaseReference!
@@ -35,7 +35,7 @@ class ViewModel: NSObject {
     }
     
 //    Listeleme vb işlemler için veritabanından verileri alıyoruz.
-    func getProduct() {//observe(DataEventType.value
+    func getProduct() {
         ref.child("products").observe(.value, with: { (snapshot) in
             self.products.removeAll()
             let values = snapshot.value as? [String: AnyObject]
@@ -79,6 +79,7 @@ class ViewModel: NSObject {
     }
     
     private func createModel(values: [String: AnyObject]) {
+        self.products.removeAll()
         for (_, value) in values.enumerated() {
             let id = value.value["id"] as? String
             let title = value.value["title"] as? String
@@ -91,5 +92,9 @@ class ViewModel: NSObject {
             
         }
         self.viewModelDelegate!.updateTableData(products: self.products)
+    }
+    
+    func deleteData() {
+//        ref.child("products")
     }
 }
