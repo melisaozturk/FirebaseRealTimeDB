@@ -15,6 +15,8 @@ protocol ViewModelDelegate {
 //TODO: değişiklikleri gözle bir veri veritabanında silinirse table'ı update et
 //TODO: id ler yanlış yazılıyor düzenle - görsel ekle
 //TODO: listeye veri eklerken eğer veri girilmemiş ise uyarı göster ekletme - (boş veri girdirtme)
+//TODO: Silme, düzenleme gibi fonksiyonları ekleyebilirsin
+
 class ViewModel: NSObject {
     
     private var ref: DatabaseReference!
@@ -34,20 +36,21 @@ class ViewModel: NSObject {
     }
     
 //    Listeleme vb işlemler için veritabanından verileri alıyoruz.
-    func getProduct() {
-        ref.child("products").observeSingleEvent(of: .value, with: { (snapshot) in
+    func getProduct() {//observe(DataEventType.value
+        ref.child("products").observe(.value, with: { (snapshot) in
+            self.products.removeAll()
             let values = snapshot.value as? [String: AnyObject]
-            
-            if values == nil {
-                self.setProduct(id: self.ref.childByAutoId().key!, category: "Elektronik", title: "Bilgisayar", price: 100.000, description: "abc", date: Util.shared().getDate())
-                self.setProduct(id: self.ref.childByAutoId().key!, category: "Beyaz Eşya", title: "Buz Dolabı", price: 100.000, description: "abc", date: Util.shared().getDate())
-                self.setProduct(id: self.ref.childByAutoId().key!, category: "Elektronik", title: "Tv", price: 100.000, description: "abc", date: Util.shared().getDate())
-                self.setProduct(id: self.ref.childByAutoId().key!, category: "Elektronik", title: "Bilgisayar", price: 100.000, description: "abc", date: Util.shared().getDate())
-                self.setProduct(id: self.ref.childByAutoId().key!, category: "Elektronik", title: "Bilgisayar", price: 100.000, description: "abc", date: Util.shared().getDate())
+//            TODO: check db eğer değişiklik varsa update et
+            if values == nil && self.sortedProduct.isEmpty {
+                self.setProduct(id: snapshot.key, category: "Elektronik", title: "Bilgisayar-20.11.2018", price: 100.000, description: "abc", date: "20.11.2018")
+                self.setProduct(id: snapshot.key, category: "BeyazEşya", title: "BuzDolabı-21.11.2018", price: 100.000, description: "abc", date: "21.11.2018")
+                self.setProduct(id: snapshot.key, category: "Elektronik", title: "Tv-22.11.2018", price: 100.000, description: "abc", date: "22.11.2018")
+                self.setProduct(id: snapshot.key, category: "Kırtasiye", title: "Kalem-23.11.2018", price: 100.000, description: "abc", date: "23.11.2018")
+                self.setProduct(id: snapshot.key, category: "BeyazEşya", title: "Klima-10.07.1996", price: 100.000, description: "abc", date: "10.07.1996")
                 self.ref.child("products").observeSingleEvent(of: .value, with: { (snapshot) in
                     let values = snapshot.value as? [String: AnyObject]
                     self.createModel(values: values!)
-                    
+
                 }) { (error) in
                     print(error.localizedDescription)
                 }
@@ -60,7 +63,7 @@ class ViewModel: NSObject {
     }
     
     func sortData() {
-        self.sortedProduct = [Product]()
+        self.sortedProduct.removeAll()
         ref.child("products").queryOrdered(byChild: "date").observe(.childAdded, with: { (snapshot) -> Void in
             let value = snapshot.value as? [String: AnyObject]
             let id = value!["id"] as? String

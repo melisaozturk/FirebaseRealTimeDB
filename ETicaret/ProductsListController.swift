@@ -53,7 +53,7 @@ extension ProductsListController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell", for: indexPath) as! ProductCell
-        
+        cell.selectionStyle = .blue
         cell.lblTitle.text = products[indexPath.row].title
         cell.lblPrice.text = String(products[indexPath.row].price!)
         
