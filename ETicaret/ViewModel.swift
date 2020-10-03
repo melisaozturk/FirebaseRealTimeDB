@@ -12,10 +12,10 @@ import Firebase
 protocol ViewModelDelegate {
     func updateTableData(products: [Product])
 }
-//TODO: değişiklikleri gözle bir veri veritabanında silinirse table'ı update et
-//TODO: id ler yanlış yazılıyor düzenle - görsel ekle
+//TODO: id ler yanlış yazılıyor düzenle
 //TODO: listeye veri eklerken eğer veri girilmemiş ise uyarı göster ekletme - (boş veri girdirtme)
 //TODO: Silme, düzenleme gibi fonksiyonları ekleyebilirsin
+//TODO: güne göre sıralıyor yıl yap
 
 class ViewModel: NSObject {
     
@@ -31,7 +31,7 @@ class ViewModel: NSObject {
     
 //    Veritabanını oluşturuyoruz.  Kullanıcının girdiği veriler de yine buradan ekleniyor
     func setProduct(id: String, category: String, title: String, price: Double, description: String, date: String) { // TODO: close ekle success ise uyarı gösterip ekranı kapatsın
-        ref.child("products").childByAutoId().setValue(["title" : title, "category": category, "price": price, "id": ref.childByAutoId().key!
+         ref.child("products").childByAutoId().setValue(["title" : title, "category": category, "price": price, "id": ref.childByAutoId().key!
             , "description": description, "date": date])
     }
     
@@ -40,7 +40,6 @@ class ViewModel: NSObject {
         ref.child("products").observe(.value, with: { (snapshot) in
             self.products.removeAll()
             let values = snapshot.value as? [String: AnyObject]
-//            TODO: check db eğer değişiklik varsa update et
             if values == nil && self.sortedProduct.isEmpty {
                 self.setProduct(id: snapshot.key, category: "Elektronik", title: "Bilgisayar-20.11.2018", price: 100.000, description: "abc", date: "20.11.2018")
                 self.setProduct(id: snapshot.key, category: "BeyazEşya", title: "BuzDolabı-21.11.2018", price: 100.000, description: "abc", date: "21.11.2018")

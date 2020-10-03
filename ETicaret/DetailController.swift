@@ -26,7 +26,7 @@ class DetailController: UIViewController {
     private func setData() {
         self.lblTitle.text = self.product.title
         self.lblCategory.text = self.product.category
-        self.lblPrice.text = String(self.product.price)
+        self.lblPrice.text = String(self.product.price!)
         self.lblDate.text = self.product.date
         self.txtViewDesc.text = self.product.description
     }

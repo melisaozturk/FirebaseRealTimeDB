@@ -21,7 +21,7 @@ class Popup: UIViewController {
     @IBOutlet weak var viewContent: UIView!
     
     var popupDelegate: PopupDelegate?
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.8)
@@ -36,7 +36,16 @@ class Popup: UIViewController {
     }
     
     @IBAction func actionSave(_ sender: Any) {
-        self.popupDelegate?.saveData(viewController: self, product: Product(title: self.txtTitle.text, category: self.txtCategory.text, price: self.txtPrice.text!.toDouble(), description: self.txtViewDesc.text))
+        if !self.txtTitle.text!.isEmpty && !self.txtCategory.text!.isEmpty && !self.txtPrice.text!.isEmpty && !self.txtViewDesc.text!.isEmpty {
+            self.popupDelegate?.saveData(viewController: self, product: Product(title: self.txtTitle.text, category: self.txtCategory.text, price: self.txtPrice.text!.toDouble(), description: self.txtViewDesc.text))
+        } else {
+            let alert = UIAlertController(title: "Uyarı", message: "Boş alan bırakmayınız", preferredStyle: .alert)
+            let actionOk = UIAlertAction(title: "Ok", style: .default, handler: { action in
+                self.view.endEditing(true)
+            })
+            alert.addAction(actionOk)
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {
