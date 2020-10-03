@@ -81,8 +81,4 @@ class ViewModel: NSObject {
     func sortData() {
         
     }
-    
-    func deleteData() {
-        
-    }
 }
