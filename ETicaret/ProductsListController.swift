@@ -58,7 +58,14 @@ extension ProductsListController: UITableViewDelegate, UITableViewDataSource {
         cell.lblPrice.text = String(products[indexPath.row].price!)
         
         return cell
-    }    
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailController") as? DetailController {
+            vc.product = self.products[indexPath.row]
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
 }
 
 extension ProductsListController: ViewModelDelegate {
@@ -71,7 +78,7 @@ extension ProductsListController: ViewModelDelegate {
 
 extension ProductsListController: PopupDelegate {
     func saveData(viewController: UIViewController, product: Product) {
-        self.viewModel.setProduct(id: "", category: product.category, title: product.title, price: product.price, description: product.description, date: Util.shared().getDate())
+        self.viewModel.setProduct(id: "", category: product.category ?? "", title: product.title ?? "", price: product.price ?? 0.0, description: product.description ?? "", date: Util.shared().getDate())
         Util.shared().removeFromView(viewController: viewController)
         self.products.append(product)
         self.tableView.reloadData()

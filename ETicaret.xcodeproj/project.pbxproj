@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E6541B22529027600A13311 /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6541B12529027600A13311 /* DetailController.swift */; };
 		1E92592A2524FBDE002D06DD /* ProductsListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9259292524FBDE002D06DD /* ProductsListController.swift */; };
 		1E92592D2524FC17002D06DD /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E92592B2524FC17002D06DD /* ProductCell.swift */; };
 		1E92592E2524FC17002D06DD /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E92592C2524FC17002D06DD /* ProductCell.xib */; };
@@ -48,6 +49,7 @@
 
 /* Begin PBXFileReference section */
 		08E1755F46BAE981808E5CD7 /* Pods_ETicaret.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ETicaret.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E6541B12529027600A13311 /* DetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailController.swift; sourceTree = "<group>"; };
 		1E9259292524FBDE002D06DD /* ProductsListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsListController.swift; sourceTree = "<group>"; };
 		1E92592B2524FC17002D06DD /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		1E92592C2524FC17002D06DD /* ProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCell.xib; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				1E9259312524FCDE002D06DD /* Resources */,
 				1E92592F2524FCC2002D06DD /* Cell */,
 				1E9259292524FBDE002D06DD /* ProductsListController.swift */,
+				1E6541B12529027600A13311 /* DetailController.swift */,
 				1EB062082523CE1B00A8B2FE /* ViewModel.swift */,
 				1EB062062523CE0A00A8B2FE /* Model.swift */,
 				1EB061DC2523CAB200A8B2FE /* Main.storyboard */,
@@ -477,6 +480,7 @@
 				1EA31CAB252886210061DB9F /* LoadingView.swift in Sources */,
 				1EA31CB1252890900061DB9F /* Util.swift in Sources */,
 				1EB061D92523CAB200A8B2FE /* SceneDelegate.swift in Sources */,
+				1E6541B22529027600A13311 /* DetailController.swift in Sources */,
 				1E92592A2524FBDE002D06DD /* ProductsListController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
