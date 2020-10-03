@@ -222,8 +222,8 @@
             filePath = "ETicaret/Popup/Popup.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
             landmarkName = "actionSave(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -263,7 +263,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "9407DBA9-BC1D-4EAC-86A4-A5B369351D77"
+            uuid = "D96856B2-8402-4458-AFCE-36AEF7E0C43A"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -274,6 +274,38 @@
             endingLineNumber = "31"
             landmarkName = "actionClose(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D96856B2-8402-4458-AFCE-36AEF7E0C43A - 3935c60499714560"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ETicaret.Popup.actionClose(Any) -&gt; ()"
+                  moduleName = "ETicaret"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/melisaozturk/devel/ETicaret/ETicaret/Popup/Popup.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "112">
+               </Location>
+               <Location
+                  uuid = "D96856B2-8402-4458-AFCE-36AEF7E0C43A - f7180a3ccf518394"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in ETicaret.Popup.actionClose(Any) -&gt; ()"
+                  moduleName = "ETicaret"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/melisaozturk/devel/ETicaret/ETicaret/Popup/Popup.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "48">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

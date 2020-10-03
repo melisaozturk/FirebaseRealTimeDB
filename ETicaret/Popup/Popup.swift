@@ -28,7 +28,14 @@ class Popup: UIViewController {
     }
 
     @IBAction func actionClose(_ sender: Any) {
-        self.view.removeFromSuperview()
+        UIView.animate(withDuration: 0.2, animations: { [weak self] in
+            guard let _ = self else { return }
+            self!.view.alpha = 0.0
+        }) { (isClose: Bool) in
+            if isClose {
+                self.view.removeFromSuperview()
+            }
+        }
     }
     
     @IBAction func actionSave(_ sender: Any) {
