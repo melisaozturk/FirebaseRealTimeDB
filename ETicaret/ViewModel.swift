@@ -37,9 +37,9 @@ class ViewModel: NSObject {
 //    Listeleme vb işlemler için veritabanından verileri alıyoruz.
     func getProduct() {
         ref.child("products").observe(.value, with: { (snapshot) in
-            self.products.removeAll()
+//            self.products.removeAll()
             let values = snapshot.value as? [String: AnyObject]
-            if values == nil && self.sortedProduct.isEmpty {
+            if values == nil {
                 self.setProduct(id: snapshot.key, category: "Elektronik", title: "Bilgisayar-20.11.2018", price: 100.000, description: "abc", date: "20.11.2018")
                 self.setProduct(id: snapshot.key, category: "BeyazEşya", title: "BuzDolabı-21.11.2018", price: 100.000, description: "abc", date: "21.11.2018")
                 self.setProduct(id: snapshot.key, category: "Elektronik", title: "Tv-22.11.2018", price: 100.000, description: "abc", date: "22.11.2018")
@@ -61,7 +61,6 @@ class ViewModel: NSObject {
     }
     
     func sortData() {
-        self.sortedProduct.removeAll()
         ref.child("products").queryOrdered(byChild: "date").observe(.childAdded, with: { (snapshot) -> Void in
             let value = snapshot.value as? [String: AnyObject]
             let id = value!["id"] as? String
@@ -71,15 +70,16 @@ class ViewModel: NSObject {
             let description = value!["description"] as? String
             let date = value!["date"] as? String
             
-                let sortedProduct = Product(id: id, title: title, category: category, price: price, description: description, date: date)
-                self.sortedProduct.append(sortedProduct)
-                        
+            let sortedProduct = Product(id: id, title: title, category: category, price: price, description: description, date: date)
+            self.sortedProduct.append(sortedProduct)
+            
             self.viewModelDelegate?.updateTableData(products: self.sortedProduct)
         })
     }
     
     private func createModel(values: [String: AnyObject]) {
-        self.products.removeAll()
+//        self.products.removeAll()
+//        self.sortedProduct.removeAll()
         for (_, value) in values.enumerated() {
             let id = value.value["id"] as? String
             let title = value.value["title"] as? String
