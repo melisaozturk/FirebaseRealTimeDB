@@ -9,8 +9,7 @@
 import UIKit
 
 protocol PopupDelegate {
-//    func closePopUp()
-    func saveData()
+    func saveData(viewController: UIViewController)
 }
 
 class Popup: UIViewController {
@@ -25,20 +24,14 @@ class Popup: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.8)
+        self.navigationController?.isNavigationBarHidden = true
     }
 
     @IBAction func actionClose(_ sender: Any) {
-        UIView.animate(withDuration: 0.2, animations: { [weak self] in
-            guard let _ = self else { return }
-            self!.view.alpha = 0.0
-        }) { (isClose: Bool) in
-            if isClose {
-                self.view.removeFromSuperview()
-            }
-        }
+        UIUtil.shared().removeFromView(viewController: self)
     }
     
     @IBAction func actionSave(_ sender: Any) {
-        self.popupDelegate?.saveData()
+        self.popupDelegate?.saveData(viewController: self)
     }
 }
