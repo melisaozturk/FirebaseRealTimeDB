@@ -9,7 +9,7 @@
 import Foundation
 
 struct Product {
-    var id: Int!
+    var id: String!
     var title: String!
     var category: String!
     var price: Double!

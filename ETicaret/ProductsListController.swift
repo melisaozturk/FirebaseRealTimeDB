@@ -20,7 +20,7 @@ class ProductsListController: UIViewController {
         self.registerTableView()
         
         self.viewModel.viewModelDelegate = self
-        UIUtil.shared().showLoading(viewController: self)
+        Util.shared().showLoading(viewController: self)
         self.viewModel.getProduct()
     }
     
@@ -50,7 +50,7 @@ extension ProductsListController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell", for: indexPath) as! ProductCell
         
         cell.lblTitle.text = products[indexPath.row].title
-        cell.lblPrice.text = String(products[indexPath.row].price)
+        cell.lblPrice.text = String(products[indexPath.row].price!)
         
         return cell
     }    
@@ -59,14 +59,16 @@ extension ProductsListController: UITableViewDelegate, UITableViewDataSource {
 extension ProductsListController: ViewModelDelegate {
     func updateTableData(products: [Product]) {
         self.products = products
-        UIUtil.shared().removeLoading(viewController: self)
+        Util.shared().removeLoading(viewController: self)
         self.tableView.reloadData()
     }
 }
 
 extension ProductsListController: PopupDelegate {
     func saveData(viewController: UIViewController, product: Product) {
-        self.viewModel.setProduct(id: product.id, category: product.category, title: product.title, price: product.price, description: product.description)
-        UIUtil.shared().removeFromView(viewController: viewController)
+        self.viewModel.setProduct(id: "", category: product.category, title: product.title, price: product.price, description: product.description)
+        Util.shared().removeFromView(viewController: viewController)
+        self.products.append(product)
+        self.tableView.reloadData()
     }
 }

@@ -1,5 +1,5 @@
 //
-//  UIUtil.swift
+//  Util.swift
 //  ETicaret
 //
 //  Created by melisa öztürk on 3.10.2020.
@@ -9,19 +9,19 @@
 import Foundation
 import UIKit
 
-protocol UIUtilDelegate {
+protocol UtilDelegate {
     func showLoading(viewController: UIViewController)
     func removeLoading(viewController: UIViewController)
 }
 
-class UIUtil: UIUtilDelegate {
+class Util: UtilDelegate {
     
     let loading = LoadingView()
-    private static var sharedInstance: UIUtil?
+    private static var sharedInstance: Util?
     
-    public class func shared() -> UIUtil {
+    public class func shared() -> Util {
         if sharedInstance == nil {
-            sharedInstance = UIUtil()
+            sharedInstance = Util()
         }
         return sharedInstance!
     }
@@ -54,4 +54,10 @@ class UIUtil: UIUtilDelegate {
             }
         }
     }
+}
+
+extension String {
+func toDouble() -> Double? {
+    return NumberFormatter().number(from: self)?.doubleValue
+ }
 }

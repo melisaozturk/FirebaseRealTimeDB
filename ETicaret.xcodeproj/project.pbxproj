@@ -13,7 +13,7 @@
 		1E92593425250183002D06DD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1E92593325250183002D06DD /* GoogleService-Info.plist */; };
 		1EA31CAB252886210061DB9F /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA31CA9252886210061DB9F /* LoadingView.swift */; };
 		1EA31CAE252886560061DB9F /* Popup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA31CAC252886560061DB9F /* Popup.swift */; };
-		1EA31CB1252890900061DB9F /* UIUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA31CB0252890900061DB9F /* UIUtil.swift */; };
+		1EA31CB1252890900061DB9F /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA31CB0252890900061DB9F /* Util.swift */; };
 		1EA31CB3252892670061DB9F /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EA31CAA252886210061DB9F /* LoadingView.xib */; };
 		1EB061D72523CAB200A8B2FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB061D62523CAB200A8B2FE /* AppDelegate.swift */; };
 		1EB061D92523CAB200A8B2FE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB061D82523CAB200A8B2FE /* SceneDelegate.swift */; };
@@ -55,7 +55,7 @@
 		1EA31CA9252886210061DB9F /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		1EA31CAA252886210061DB9F /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
 		1EA31CAC252886560061DB9F /* Popup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popup.swift; sourceTree = "<group>"; };
-		1EA31CB0252890900061DB9F /* UIUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIUtil.swift; sourceTree = "<group>"; };
+		1EA31CB0252890900061DB9F /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		1EB061D32523CAB200A8B2FE /* ETicaret.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ETicaret.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EB061D62523CAB200A8B2FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1EB061D82523CAB200A8B2FE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -131,7 +131,7 @@
 		1EA31CB2252890980061DB9F /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				1EA31CB0252890900061DB9F /* UIUtil.swift */,
+				1EA31CB0252890900061DB9F /* Util.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -475,7 +475,7 @@
 				1EB062092523CE1B00A8B2FE /* ViewModel.swift in Sources */,
 				1E92592D2524FC17002D06DD /* ProductCell.swift in Sources */,
 				1EA31CAB252886210061DB9F /* LoadingView.swift in Sources */,
-				1EA31CB1252890900061DB9F /* UIUtil.swift in Sources */,
+				1EA31CB1252890900061DB9F /* Util.swift in Sources */,
 				1EB061D92523CAB200A8B2FE /* SceneDelegate.swift in Sources */,
 				1E92592A2524FBDE002D06DD /* ProductsListController.swift in Sources */,
 			);

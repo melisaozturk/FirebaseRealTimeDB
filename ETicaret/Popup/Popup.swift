@@ -32,11 +32,11 @@ class Popup: UIViewController {
     }
 
     @IBAction func actionClose(_ sender: Any) {
-        UIUtil.shared().removeFromView(viewController: self)
+        Util.shared().removeFromView(viewController: self)
     }
     
     @IBAction func actionSave(_ sender: Any) {
-        self.popupDelegate?.saveData(viewController: self, product: Product(id: 0, title: self.txtTitle.text, category: self.txtCategory.text, price: Double(self.txtPrice.text!), description: self.txtViewDesc.text))
+        self.popupDelegate?.saveData(viewController: self, product: Product(title: self.txtTitle.text, category: self.txtCategory.text, price: self.txtPrice.text!.toDouble(), description: self.txtViewDesc.text))
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {
