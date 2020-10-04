@@ -10,11 +10,16 @@ import UIKit
 
 class ProductsListController: UIViewController {
 
+    enum Ty {
+        case add
+        case sort
+    }
     @IBOutlet weak var tableView: UITableView!
     
     let viewModel = ViewModel()
     var products = [Product]()
-
+    var ty: Ty!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.registerTableView()
@@ -78,7 +83,7 @@ extension ProductsListController: ViewModelDelegate {
 
 extension ProductsListController: PopupDelegate {
     func saveData(viewController: UIViewController, product: Product) {
-        self.viewModel.setProduct(id: "", category: product.category ?? "", title: product.title ?? "", price: product.price ?? 0.0, description: product.description ?? "", date: Util.shared().getStringDate())
+        self.viewModel.setProduct(id: "", category: product.category ?? "", title: product.title ?? "", price: product.price ?? 0.0, description: product.description ?? "", date: Util.shared().getDate())
         Util.shared().removeFromView(viewController: viewController)
         self.products.append(product)
         self.tableView.reloadData()
