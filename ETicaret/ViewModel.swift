@@ -12,13 +12,8 @@ import Firebase
 protocol ViewModelDelegate {
     func updateTableData(products: [Product])
 }
-//TODO: id ler yanlış yazılıyor düzenle
-//TODO: Silme, düzenleme gibi fonksiyonları ekleyebilirsin
-//TODO: güne göre sıralıyor yıl yap
-//TODO: popup ta keyboard done butonu yap
-//TODO: sort olmadı bak
-// MARKK: TEST
-//TODO: DB den sil - db de price = 0 yap - db den ekle
+//TODO: düzenleme gibi fonksiyonları ekleyebilirsin -sort bak
+
 class ViewModel: NSObject {
     
     private var ref: DatabaseReference!
@@ -65,7 +60,6 @@ class ViewModel: NSObject {
     }
     
 //    func sortData() {
-//        
 //        self.sortedProduct.removeAll()
 //        ref.child("products").queryOrdered(byChild: "category").observe(.childAdded, with: { (snapshot) -> Void in
 //            let value = snapshot.value as? [String: AnyObject]
