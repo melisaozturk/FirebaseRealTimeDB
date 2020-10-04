@@ -111,6 +111,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E4CCAD9252A426800EBD9BE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1E9259292524FBDE002D06DD /* ProductsListController.swift */,
+				1E6541B12529027600A13311 /* DetailController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		1E92592F2524FCC2002D06DD /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,16 +172,15 @@
 		1EB061D52523CAB200A8B2FE /* ETicaret */ = {
 			isa = PBXGroup;
 			children = (
-				1EEBAB722527AE160092E32E /* Popup */,
 				1E9259312524FCDE002D06DD /* Resources */,
+				1EEBAB722527AE160092E32E /* Popup */,
+				1EA31CB2252890980061DB9F /* Common */,
+				1E4CCAD9252A426800EBD9BE /* Controller */,
 				1E92592F2524FCC2002D06DD /* Cell */,
-				1E9259292524FBDE002D06DD /* ProductsListController.swift */,
-				1E6541B12529027600A13311 /* DetailController.swift */,
 				1EB062082523CE1B00A8B2FE /* ViewModel.swift */,
 				1EB062062523CE0A00A8B2FE /* Model.swift */,
 				1EB061DC2523CAB200A8B2FE /* Main.storyboard */,
 				1EB061E12523CAB900A8B2FE /* LaunchScreen.storyboard */,
-				1EA31CB2252890980061DB9F /* Common */,
 				1EB061E42523CAB900A8B2FE /* Info.plist */,
 				1E92593325250183002D06DD /* GoogleService-Info.plist */,
 			);

@@ -12,7 +12,6 @@ import Firebase
 protocol ViewModelDelegate {
     func updateTableData(products: [Product])
 }
-//TODO: düzenleme gibi fonksiyonları ekleyebilirsin -sort bak
 
 class ViewModel: NSObject {
     
@@ -104,7 +103,6 @@ class ViewModel: NSObject {
             }
         }
         ref.child("products").child(key!).updateChildValues(["id": ref.childByAutoId().key!, "category": updatedProduct.category!, "title": updatedProduct.title!, "description": updatedProduct.description!, "price": updatedProduct.price!], withCompletionBlock: { _,_ in
-//            self.viewModelDelegate!.updateTableData(products: self.products)            
         })
     }
     

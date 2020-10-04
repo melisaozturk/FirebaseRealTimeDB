@@ -95,7 +95,7 @@ extension ProductsListController: ViewModelDelegate {
     func updateTableData(products: [Product]) {
         self.products = products
         Util.shared().removeLoading(viewController: self)
-        self.tableView.reloadData()
+        self.tableView.reloadData()        
     }
 }
 
@@ -110,7 +110,6 @@ extension ProductsListController: PopupDelegate {
             let updatedProduct = Product(id: "", title: product.title ?? "", category: product.category ?? "", price: product.price ?? 0.0, description: product.description ?? "", date: Util.shared().getDate())
             self.viewModel.updateData(selectedIndex: index!, updatedProduct: updatedProduct)
             Util.shared().removeFromView(viewController: viewController)
-//            self.products.append(product)
             self.tableView.reloadData()
         }
     }
