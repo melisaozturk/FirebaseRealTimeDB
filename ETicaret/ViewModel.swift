@@ -45,6 +45,7 @@ class ViewModel: NSObject {
                 self.setProduct(id: snapshot.key, category: "Elektronik", title: "Tv-22.11.2018", price: 100.000, description: "abc", date: "22.11.2018")
                 self.setProduct(id: snapshot.key, category: "Kırtasiye", title: "Kalem-23.11.2018", price: 100.000, description: "abc", date: "23.11.2018")
                 self.setProduct(id: snapshot.key, category: "BeyazEşya", title: "Klima-10.07.1996", price: 100.000, description: "abc", date: "10.07.1996")
+               
                 self.ref.child("products").observeSingleEvent(of: .value, with: { (snapshot) in
                     let values = snapshot.value as? [String: AnyObject]
                     self.createModel(values: values!)
@@ -62,22 +63,24 @@ class ViewModel: NSObject {
     
     func sortData() {
         self.sortedProduct.removeAll()
-        ref.child("products").queryOrdered(byChild: "date").observe(.childAdded, with: { (snapshot) -> Void in
-            let value = snapshot.value as? [String: AnyObject]
-            let id = value!["id"] as? String
-            let title = value!["title"] as? String
-            let category = value!["category"] as? String
-            let price = value!["price"] as? Double
-            let description = value!["description"] as? String
-            let date = value!["date"] as? String
-                        
-            self.sortedProduct.append(Product(id: id, title: title, category: category, price: price, description: description, date: date))
-            self.viewModelDelegate?.updateTableData(products: self.sortedProduct)
+        ref.child("products").queryOrdered(byChild: "date").observeSingleEvent(of: .value, with: { (snapshot) -> Void in
+           let values = snapshot.value as? [String: AnyObject]
+            for (_, value) in values!.enumerated() {
+                let id = value.value["id"] as? String
+                let title = value.value["title"] as? String
+                let category = value.value["category"] as? String
+                let price = value.value["price"] as? Double
+                let description = value.value["description"] as? String
+                let date = value.value["date"] as? String
+                
+                self.sortedProduct.append(Product(id: id, title: title, category: category, price: price, description: description, date: date))
+                self.viewModelDelegate?.updateTableData(products: self.sortedProduct)
+            }
         })
     }
     
     private func createModel(values: [String: AnyObject]) {
-        self.products.removeAll()
+//        self.products.removeAll()
         for (_, value) in values.enumerated() {
             let id = value.value["id"] as? String
             let title = value.value["title"] as? String
