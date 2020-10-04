@@ -61,16 +61,5 @@ class Util: UtilDelegate {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd.MM.yyyy"
         return formatter.string(from: date)
-    }
-    
-    func toTimeStamp(dateString: String) -> Int{
-        let date = dateString.replacingOccurrences(of: "/", with: "")
-        return Int(date)!
-    }
-}
-
-extension String {
-    func toDouble() -> Double? {
-        return NumberFormatter().number(from: self)?.doubleValue
-    }
+    }    
 }

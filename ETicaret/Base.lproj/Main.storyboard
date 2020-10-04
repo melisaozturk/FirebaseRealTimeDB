@@ -53,6 +53,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="btnSort" destination="fhp-fY-88q" id="pJm-iK-qlo"/>
                         <outlet property="tableView" destination="d4f-Px-ZyL" id="jET-9L-4Wu"/>
                         <segue destination="tyg-j8-hZ8" kind="presentation" identifier="detail-segue" id="MpT-qi-M4P"/>
                     </connections>

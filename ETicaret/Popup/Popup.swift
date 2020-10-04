@@ -41,7 +41,7 @@ class Popup: UIViewController {
     @IBAction func actionSave(_ sender: Any) {
         if index == nil {
             if !self.txtTitle.text!.isEmpty && !self.txtCategory.text!.isEmpty && !self.txtPrice.text!.isEmpty && !self.txtViewDesc.text!.isEmpty {
-                self.popupDelegate?.saveData(viewController: self, product: Product(title: self.txtTitle.text, category: self.txtCategory.text, price: self.txtPrice.text!.toDouble(), description: self.txtViewDesc.text), index: nil)
+                self.popupDelegate?.saveData(viewController: self, product: Product(title: self.txtTitle.text, category: self.txtCategory.text, price: Double(self.txtPrice.text!), description: self.txtViewDesc.text), index: nil)
             } else {
                 let alert = UIAlertController(title: "Uyarı", message: "Boş alan bırakmayınız", preferredStyle: .alert)
                 let actionOk = UIAlertAction(title: "Ok", style: .default, handler: { action in
@@ -52,7 +52,7 @@ class Popup: UIViewController {
             }
         } else {
             if !self.txtTitle.text!.isEmpty && !self.txtCategory.text!.isEmpty && !self.txtPrice.text!.isEmpty && !self.txtViewDesc.text!.isEmpty {
-                self.popupDelegate?.saveData(viewController: self, product: Product(title: self.txtTitle.text, category: self.txtCategory.text, price: self.txtPrice.text!.toDouble(), description: self.txtViewDesc.text), index: self.index)
+                self.popupDelegate?.saveData(viewController: self, product: Product(title: self.txtTitle.text, category: self.txtCategory.text, price: Double(self.txtPrice.text!), description: self.txtViewDesc.text), index: self.index)
             } else {
                 let alert = UIAlertController(title: "Uyarı", message: "Boş alan bırakmayınız", preferredStyle: .alert)
                 let actionOk = UIAlertAction(title: "Ok", style: .default, handler: { action in

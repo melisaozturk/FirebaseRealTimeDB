@@ -11,6 +11,7 @@ import UIKit
 class ProductsListController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var btnSort: UIButton!
     
     let viewModel = ViewModel()
     var products = [Product]()
@@ -22,6 +23,8 @@ class ProductsListController: UIViewController {
         self.viewModel.viewModelDelegate = self
         Util.shared().showLoading(viewController: self)
         self.viewModel.getProduct()
+        
+        self.btnSort.isHidden = true
     }
     
     private func registerTableView() {
@@ -68,12 +71,12 @@ extension ProductsListController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let action1 = UITableViewRowAction(style: .default, title: "Action1", handler: {
+        let action1 = UITableViewRowAction(style: .default, title: "Delete", handler: {
             (action, indexPath) in
             self.viewModel.deleteData(selectedIndex: indexPath.row)
         })
         action1.backgroundColor = UIColor.lightGray
-        let action2 = UITableViewRowAction(style: .default, title: "Action2", handler: {
+        let action2 = UITableViewRowAction(style: .default, title: "Update", handler: {
             (action, indexPath) in
             if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Popup") as? Popup {
                 vc.popupDelegate = self
@@ -86,53 +89,6 @@ extension ProductsListController: UITableViewDelegate, UITableViewDataSource {
             }        })
         return [action1, action2]
     }
-    
-//    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-//        let action1 = UITableViewRowAction(style: .default, title: "Action1", handler: {
-//            (action, indexPath) in
-//            self.viewModel.deleteData(selectedIndex: indexPath.row)
-//        })
-//
-//        let action2 = UITableViewRowAction(style: .default, title: "Action2", handler: {
-//            (action, indexPath) in
-//            if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Popup") as? Popup {
-//                vc.popupDelegate = self
-//                vc.index = indexPath.row
-//                self.addChild(vc)
-//                vc.view.frame = self.view.frame
-//                self.view.addSubview(vc.view)
-//                vc.didMove(toParent: self)
-//            }        })
-//        return [action1, action2]
-//        if editingStyle == UITableViewCell.EditingStyle.delete {
-//            self.viewModel.deleteData(selectedIndex: indexPath.row)
-//        } else if editingStyle == UITableViewCell.EditingStyle.insert { //Update data
-//            if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Popup") as? Popup {
-//                vc.popupDelegate = self
-//                vc.index = indexPath.row
-//                self.addChild(vc)
-//                vc.view.frame = self.view.frame
-//                self.view.addSubview(vc.view)
-//                vc.didMove(toParent: self)
-//            }
-//        }
-//    }
-    
-//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == UITableViewCell.EditingStyle.delete {
-//            self.viewModel.deleteData(selectedIndex: indexPath.row)
-//        }
-//        if editingStyle == UITableViewCell.EditingStyle.insert { //Update data
-//            if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Popup") as? Popup {
-//                vc.popupDelegate = self
-//                vc.index = indexPath.row
-//                self.addChild(vc)
-//                vc.view.frame = self.view.frame
-//                self.view.addSubview(vc.view)
-//                vc.didMove(toParent: self)
-//            }
-//        }
-//    }
 }
 
 extension ProductsListController: ViewModelDelegate {
@@ -153,6 +109,7 @@ extension ProductsListController: PopupDelegate {
         } else {
             let updatedProduct = Product(id: "", title: product.title ?? "", category: product.category ?? "", price: product.price ?? 0.0, description: product.description ?? "", date: Util.shared().getDate())
             self.viewModel.updateData(selectedIndex: index!, updatedProduct: updatedProduct)
+            Util.shared().removeFromView(viewController: viewController)
 //            self.products.append(product)
             self.tableView.reloadData()
         }
