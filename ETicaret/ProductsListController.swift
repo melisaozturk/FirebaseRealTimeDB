@@ -42,8 +42,7 @@ class ProductsListController: UIViewController {
     
     @IBAction func actionSort(_ sender: Any) {
         Util.shared().showLoading(viewController: self)
-        self.viewModel.ty = .sort
-        self.viewModel.sortData()        
+//        self.viewModel.sortData()        
     }
 }
 
@@ -65,6 +64,12 @@ extension ProductsListController: UITableViewDelegate, UITableViewDataSource {
         if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailController") as? DetailController {
             vc.product = self.products[indexPath.row]
             self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCell.EditingStyle.delete) {            
+            self.viewModel.deleteData(deletedKeyIndex: indexPath.row)
         }
     }
 }
