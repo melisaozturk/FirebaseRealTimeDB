@@ -78,9 +78,9 @@ extension ProductsListController: ViewModelDelegate {
 
 extension ProductsListController: PopupDelegate {
     func saveData(viewController: UIViewController, product: Product) {
-        self.viewModel.setProduct(id: "", category: product.category ?? "", title: product.title ?? "", price: product.price ?? 0.0, description: product.description ?? "", date: Util.shared().getDate())
+        self.viewModel.setProduct(id: "", category: product.category ?? "", title: product.title ?? "", price: product.price ?? 0.0, description: product.description ?? "", date: Util.shared().getStringDate())
         Util.shared().removeFromView(viewController: viewController)
-        self.products.append(product) // TODO: gerekli mi
+        self.products.append(product)
         self.tableView.reloadData()
     }
 }

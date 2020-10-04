@@ -55,13 +55,33 @@ class Util: UtilDelegate {
         }
     }
     
-    //    MARK: Date
-    func getDate() -> String{
+    //    MARK: CurrentDate
+    func getStringDate() -> String{
         let date = Date()
         let formatter = DateFormatter()
         formatter.dateFormat = "dd.MM.yyyy"
         return formatter.string(from: date)
     }
+    
+    func getDate() -> Date {
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd.MM.yyyy"
+        return setDate(date: formatter.string(from: date))
+    }
+    
+    func setDate(date: String) -> Date {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd.MM.yyyy"
+        return formatter.date(from: date)!
+    }
+    
+    func setStringDate(date: Date) -> String {
+           let formatter = DateFormatter()
+           formatter.dateFormat = "dd.MM.yyyy"
+           return formatter.string(from: date)
+       }
+    
 }
 
 extension String {
