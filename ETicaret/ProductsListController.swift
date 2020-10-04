@@ -9,16 +9,11 @@
 import UIKit
 
 class ProductsListController: UIViewController {
-
-    enum Ty {
-        case add
-        case sort
-    }
+    
     @IBOutlet weak var tableView: UITableView!
     
     let viewModel = ViewModel()
     var products = [Product]()
-    var ty: Ty!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +42,7 @@ class ProductsListController: UIViewController {
     
     @IBAction func actionSort(_ sender: Any) {
         Util.shared().showLoading(viewController: self)
+        self.viewModel.ty = .sort
         self.viewModel.sortData()        
     }
 }

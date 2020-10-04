@@ -25,7 +25,7 @@ class ViewModel: NSObject {
     var viewModelDelegate: ViewModelDelegate?
     var products = [Product]()
     var sortedProduct = [Product]()
-    
+
     override init() {
         super.init()
         self.ref = Database.database().reference()
@@ -40,29 +40,30 @@ class ViewModel: NSObject {
         ref.child("products").observe(.value, with: { (snapshot) in
             self.products.removeAll()
             let values = snapshot.value as? [String: AnyObject]
-            if values == nil {
-                self.setProduct(id: snapshot.key, category: "Elektronik", title: "Bilgisayar-20.11.2018", price: 100.000, description: "abc", date: "20.11.2018")
-                self.setProduct(id: snapshot.key, category: "BeyazEşya", title: "BuzDolabı-21.11.2018", price: 100.000, description: "abc", date: "21.11.2018")
-                self.setProduct(id: snapshot.key, category: "Elektronik", title: "Tv-22.11.2018", price: 100.000, description: "abc", date: "22.11.2018")
-                self.setProduct(id: snapshot.key, category: "Kırtasiye", title: "Kalem-23.11.2018", price: 100.000, description: "abc", date: "23.11.2018")
-                self.setProduct(id: snapshot.key, category: "BeyazEşya", title: "Klima-10.07.1996", price: 100.000, description: "abc", date: "10.07.1996")
-               
-                self.ref.child("products").observeSingleEvent(of: .value, with: { (snapshot) in
-                    let values = snapshot.value as? [String: AnyObject]
-                    self.createModel(values: values!)
-                    
-                }) { (error) in
-                    print(error.localizedDescription)
-                }
-            } else {
+//            if values == nil {
+//                self.setProduct(id: snapshot.key, category: "Elektronik", title: "Bilgisayar-20.11.2018", price: 100.000, description: "abc", date: "20.11.2018")
+//                self.setProduct(id: snapshot.key, category: "BeyazEşya", title: "BuzDolabı-21.11.2018", price: 100.000, description: "abc", date: "21.11.2018")
+//                self.setProduct(id: snapshot.key, category: "Elektronik", title: "Tv-22.11.2018", price: 100.000, description: "abc", date: "22.11.2018")
+//                self.setProduct(id: snapshot.key, category: "Kırtasiye", title: "Kalem-23.11.2018", price: 100.000, description: "abc", date: "23.11.2018")
+//                self.setProduct(id: snapshot.key, category: "BeyazEşya", title: "Klima-10.07.1996", price: 100.000, description: "abc", date: "10.07.1996")
+//
+//                self.ref.child("products").observeSingleEvent(of: .value, with: { (snapshot) in
+//                    let values = snapshot.value as? [String: AnyObject]
+//                    self.createModel(values: values!)
+//
+//                }) { (error) in
+//                    print(error.localizedDescription)
+//                }
+//            } else {
                 self.createModel(values: values!)
-            }
+//            }
         }) { (error) in
             print(error.localizedDescription)
         }
     }
     
     func sortData() {
+        
         self.sortedProduct.removeAll()
         ref.child("products").queryOrdered(byChild: "category").observe(.childAdded, with: { (snapshot) -> Void in
             let value = snapshot.value as? [String: AnyObject]
