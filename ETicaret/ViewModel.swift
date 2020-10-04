@@ -16,6 +16,9 @@ protocol ViewModelDelegate {
 //TODO: Silme, düzenleme gibi fonksiyonları ekleyebilirsin
 //TODO: güne göre sıralıyor yıl yap
 //TODO: popup ta keyboard done butonu yap
+//TODO: sort olmadı bak
+// MARKK: TEST
+//TODO: DB den sil - db de price = 0 yap - db den ekle
 class ViewModel: NSObject {
     
     private var ref: DatabaseReference!
