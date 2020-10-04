@@ -77,10 +77,10 @@ class ViewModel: NSObject {
 //        })
 //    }
     
-    func deleteData(deletedKeyIndex: Int) {
+    func deleteData(selectedIndex: Int) {
         var key: String?
         for (index, value) in self.values!.enumerated() {
-            if index == deletedKeyIndex {
+            if index == selectedIndex {
                 key = value.key
             }
         }
@@ -92,6 +92,19 @@ class ViewModel: NSObject {
             } else {
                 self.getProduct()
             }
+        })
+    }
+    
+    func updateData(selectedIndex: Int, updatedProduct: Product) {
+        
+        var key: String?
+        for (index, value) in self.values!.enumerated() {
+            if index == selectedIndex {
+                key = value.key
+            }
+        }
+        ref.child("products").child(key!).updateChildValues(["id": ref.childByAutoId().key!, "category": updatedProduct.category!, "title": updatedProduct.title!, "description": updatedProduct.description!, "price": updatedProduct.price!], withCompletionBlock: { _,_ in
+//            self.viewModelDelegate!.updateTableData(products: self.products)            
         })
     }
     
