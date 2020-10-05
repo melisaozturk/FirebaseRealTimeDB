@@ -61,5 +61,15 @@ class Util: UtilDelegate {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd.MM.yyyy"
         return formatter.string(from: date)
-    }    
+    }
+    
+    func showAlert(message: String) {
+        let window = UIApplication.shared.keyWindow?.rootViewController
+        let alert = UIAlertController(title: "", message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "Tamam", style: .default, handler: { _ in
+            alert.dismiss(animated: true, completion: nil)
+        })
+        alert.addAction(action)
+        window?.present(alert, animated: true, completion: nil)
+    }
 }

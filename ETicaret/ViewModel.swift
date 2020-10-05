@@ -20,6 +20,7 @@ class ViewModel: NSObject {
     private var products = [Product]()
     private var sortedProduct = [Product]()
     private var values: [String: AnyObject]?
+    private var key: String?
     
     override init() {
         super.init()
@@ -37,19 +38,22 @@ class ViewModel: NSObject {
             let values = snapshot.value as? [String: AnyObject]
             self.values = values
             if values == nil {
-                self.setProduct(id: snapshot.key, category: "Elektronik", title: "Bilgisayar-20.11.2018", price: 100.000, description: "abc", date: "20.11.2018")
-                self.setProduct(id: snapshot.key, category: "BeyazEşya", title: "BuzDolabı-21.11.2018", price: 100.000, description: "abc", date: "21.11.2018")
-                self.setProduct(id: snapshot.key, category: "Elektronik", title: "Tv-22.11.2018", price: 100.000, description: "abc", date: "22.11.2018")
-                self.setProduct(id: snapshot.key, category: "Kırtasiye", title: "Kalem-23.11.2018", price: 100.000, description: "abc", date: "23.11.2018")
-                self.setProduct(id: snapshot.key, category: "BeyazEşya", title: "Klima-10.07.1996", price: 100.000, description: "abc", date: "10.07.1996")
+                Util.shared().showAlert(message: "Listenizde ürün bulunmamaktadır.")
+                self.viewModelDelegate?.updateTableData(products: self.products)
 
-                self.ref.child("products").observeSingleEvent(of: .value, with: { (snapshot) in
-                    let values = snapshot.value as? [String: AnyObject]
-                    self.createModel(values: values!)
+//                self.setProduct(id: snapshot.key, category: "Elektronik", title: "Bilgisayar", price: 100.000, description: "Bilgisayar", date: "20.11.2018")
+//                self.setProduct(id: snapshot.key, category: "Beyazeşya", title: "Buzdolabı", price: 100.000, description: "BuzDolabı", date: "21.11.2018")
+//                self.setProduct(id: snapshot.key, category: "Elektronik", title: "Tv", price: 100.000, description: "Tv", date: "22.11.2018")
+//                self.setProduct(id: snapshot.key, category: "Kırtasiye", title: "Kalem", price: 100.000, description: "Kalem", date: "23.11.2018")
+//                self.setProduct(id: snapshot.key, category: "Beyazeşya", title: "Klima", price: 100.000, description: "Klima", date: "10.07.1996")
 
-                }) { (error) in
-                    print(error.localizedDescription)
-                }
+//                self.ref.child("products").observeSingleEvent(of: .value, with: { (snapshot) in
+//                    let values = snapshot.value as? [String: AnyObject]
+//                    self.createModel(values: values!)
+//
+//                }) { (error) in
+//                    print(error.localizedDescription)
+//                }
             } else {
                 self.createModel(values: values!)
             }
@@ -68,21 +72,16 @@ class ViewModel: NSObject {
 //            let price = value!["price"] as? Double
 //            let description = value!["description"] as? String
 //            let date = value!["date"] as? String
-//            
+//
 //            let sortedProduct = Product(id: id, title: title, category: category, price: price, description: description, date: date)
 //            self.sortedProduct.append(sortedProduct)
-//            
+//
 //            self.viewModelDelegate?.updateTableData(products: self.sortedProduct)
 //        })
 //    }
     
     func deleteData(selectedIndex: Int) {
-        var key: String?
-        for (index, value) in self.values!.enumerated() {
-            if index == selectedIndex {
-                key = value.key
-            }
-        }
+        self.getKey(selectedIndex: selectedIndex)
         ref.child("products").child(key!).removeValue(completionBlock: { error, reference in
             if error != nil {
                 #if DEBUG
@@ -95,13 +94,7 @@ class ViewModel: NSObject {
     }
     
     func updateData(selectedIndex: Int, updatedProduct: Product) {
-        
-        var key: String?
-        for (index, value) in self.values!.enumerated() {
-            if index == selectedIndex {
-                key = value.key
-            }
-        }
+        self.getKey(selectedIndex: selectedIndex)
         ref.child("products").child(key!).updateChildValues(["id": ref.childByAutoId().key!, "category": updatedProduct.category!, "title": updatedProduct.title!, "description": updatedProduct.description!, "price": updatedProduct.price!], withCompletionBlock: { _,_ in
         })
     }
@@ -117,6 +110,14 @@ class ViewModel: NSObject {
             
             self.products.append(Product(id: id, title: title, category: category, price: price, description: description, date: date))
             self.viewModelDelegate!.updateTableData(products: self.products)
+        }
+    }
+    
+    private func getKey(selectedIndex: Int) {
+        for (index, value) in self.values!.enumerated() {
+            if index == selectedIndex {
+                self.key = value.key
+            }
         }
     }
 }

@@ -45,7 +45,7 @@ class ProductsListController: UIViewController {
     
     @IBAction func actionSort(_ sender: Any) {
         Util.shared().showLoading(viewController: self)
-//        self.viewModel.sortData()        
+//        self.viewModel.sortData()
     }
 }
 
@@ -57,8 +57,8 @@ extension ProductsListController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell", for: indexPath) as! ProductCell
         cell.selectionStyle = .none
-        cell.lblTitle.text = products[indexPath.row].title
-        cell.lblPrice.text = String(products[indexPath.row].price!)
+        cell.lblTitle.text = products[indexPath.row].title ?? ""
+        cell.lblPrice.text = String(products[indexPath.row].price) ?? ""
         
         return cell
     }
